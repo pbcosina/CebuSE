@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SettingsActivity"
+    android:padding="40dp"
+    android:background="@drawable/gradient_background">
+
+    <LinearLayout
+        android:id="@+id/settingsTitleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        tools:ignore="ExtraText">
+
+        <!-- settings txt -->
+        <TextView
+            android:id="@+id/settingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="45sp"
+            android:textColor="#003749"
+            android:fontFamily="@font/dunkin_sans"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- card view for the options -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/settingsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp"
+        app:cardBackgroundColor="#fff"
+        app:layout_constraintTop_toBottomOf="@id/settingsTitleLayout"
+        android:layout_marginTop="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <!-- switch for notifications -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Turn on Notifications"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textSize="15sp"
+                    android:textColor="#003749"/>
+
+                <Switch
+                    android:id="@+id/notificationSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#011e31"
+                android:layout_marginVertical="10dp"/>
+
+            <!-- developers button -->
+            <Button
+                android:id="@+id/aboutDevelopersButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About the Developers"
+                android:backgroundTint="#82c2e3"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/dunkin_sans"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/backToHomeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="back to home"
+                android:textColor="@color/white"
+                android:backgroundTint="#036280"
+                android:fontFamily="@font/dunkin_sans"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- logout button -->
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:fontFamily="@font/dunkin_sans"
+                android:backgroundTint="#011e31"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

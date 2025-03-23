@@ -1,0 +1,290 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_background"
+        android:padding="25dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            app:cardBackgroundColor="#036280"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topNavBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/ic_logoicon"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_logoicon"
+                    android:contentDescription="Logo"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/profileIcon"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_profile"
+                    android:contentDescription="Profile"
+                    android:padding="5dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/settingsIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/settingsIcon"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_settings"
+                    android:contentDescription="Settings"
+                    android:padding="5dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:text="Your Cebu South Escapade Awaits!"
+            android:fontFamily="@font/dunkin_sans"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="#036280"
+            android:layout_marginTop="70dp"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/home_img"
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:src="@drawable/home_img"
+            android:scaleType="centerCrop"
+            android:contentDescription="Home Image"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/welcomeText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dunkin_sans"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:text="Get ready to explore stunning landscapes, dive into rich culture, and savor the best local flavors. Your next great adventure starts here!"
+            android:textColor="#337185"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@id/home_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"/>
+
+        <ImageView
+            android:id="@+id/scroll"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_scrollblue"
+            android:contentDescription="Scroll Down"
+            android:layout_margin="60dp"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/whyCebuSouth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="20dp"
+            app:cardBackgroundColor="#ffffff"
+            app:contentPadding="30dp"
+            app:layout_constraintTop_toBottomOf="@id/scroll"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/destinationHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What Makes Cebu South a Must-Visit Destination?"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#036280"
+                    android:gravity="center"
+                    android:layout_marginBottom="30dp"/>
+
+                <!-- stunning landscapes section -->
+                <LinearLayout
+                    android:id="@+id/stunningLandscapes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_stunninglandscape"
+                        android:contentDescription="Scenery Image" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Stunning Landscapes"
+                        android:fontFamily="@font/dunkin_sans"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="#036280"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/stunningLandscapesDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="From the turquoise waters of Kawasan Falls to the stunning peaks of Osmeña, Cebu South offers unforgettable landscapes for nature lovers and adventure seekers."
+                    android:textSize="12sp"
+                    android:textColor="#337185"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="20dp"/>
+
+                <!-- the pasts' legacy section -->
+                <LinearLayout
+                    android:id="@+id/pastLegacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="The Pasts’ Legacy"
+                            android:fontFamily="@font/dunkin_sans"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#036280"
+                            android:gravity="center"/>
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ic_pastlegacy"
+                            android:contentDescription="Heritage Image" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/pastLegacyDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Explore heritage towns like Carcar and Boljoon, where Spanish-era churches and local traditions bring Cebu’s past to life."
+                        android:textSize="12sp"
+                        android:textColor="#337185"
+                        android:fontFamily="@font/dunkin_sans"
+                        android:justificationMode="inter_word"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"/>
+                </LinearLayout>
+
+                <!-- mouthwatering delights section -->
+                <LinearLayout
+                    android:id="@+id/localDelights"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="20dp">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_localdelight"
+                        android:contentDescription="Food Image" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mouthwatering Local Delights"
+                        android:fontFamily="@font/dunkin_sans"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#036280"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/localDelightsDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Savor must-try specialties like Carcar’s famous lechon, fresh seafood, and native delicacies that make every meal a treat!"
+                    android:textSize="12sp"
+                    android:textColor="#337185"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:justificationMode="inter_word"
+                    android:layout_marginTop="20dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/ic_headToLocation"
+            android:layout_width="400dp"
+            android:layout_height="350dp"
+            android:src="@drawable/ic_headtolocation"
+            android:contentDescription="Head to Location"
+            android:layout_marginTop="-20dp"
+            app:layout_constraintTop_toBottomOf="@id/whyCebuSouth"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

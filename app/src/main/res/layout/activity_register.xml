@@ -1,0 +1,147 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_background"
+        android:padding="30dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="400dp"
+            android:layout_height="330dp"
+            android:src="@drawable/ic_bluelogo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/registerCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#fff"
+            app:layout_constraintTop_toBottomOf="@id/logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:orientation="vertical">
+
+                <!-- Username -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textColor="#003749"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ebebeb"
+                    android:hint="Enter Username"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textStyle="italic"
+                    android:textSize="14sp"
+                    android:padding="8dp"
+                    android:inputType="text"
+                    android:layout_marginTop="5dp"/>
+
+                <!-- Password -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textSize="16sp"
+                    android:textColor="#003749"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ebebeb"
+                    android:hint="Enter Password"
+                    android:textStyle="italic"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textSize="14sp"
+                    android:padding="8dp"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="5dp"/>
+
+                <!-- Confirm Password -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm Password"
+                    android:textSize="16sp"
+                    android:textColor="#003749"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+
+                <EditText
+                    android:id="@+id/confirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ebebeb"
+                    android:hint="Confirm Password"
+                    android:textStyle="italic"
+                    android:padding="8dp"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textSize="14sp"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="5dp"/>
+
+                <!-- Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/register"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Submit"
+                        android:fontFamily="@font/dunkin_sans"
+                        android:backgroundTint="#036280"
+                        android:textColor="@android:color/white"/>
+
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"/>
+
+                    <Button
+                        android:id="@+id/goToLogin"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="to Login"
+                        android:fontFamily="@font/dunkin_sans"
+                        android:backgroundTint="#036280"
+                        android:textColor="@android:color/white"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
