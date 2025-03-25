@@ -2,9 +2,7 @@ package com.android.cebuse
 
 import android.app.Application
 import android.util.Log
-
 class CebuSE : Application() {
-
     private var user = User()
 
     override fun onCreate() {

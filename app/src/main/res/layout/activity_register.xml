@@ -1,24 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:background="@drawable/gradient_background"
-        android:padding="30dp">
+        android:padding="30dp"
+        android:gravity="center_horizontal">
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="400dp"
             android:layout_height="330dp"
             android:src="@drawable/ic_bluelogo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/registerCard"
@@ -27,10 +27,7 @@
             android:layout_marginTop="30dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="10dp"
-            app:cardBackgroundColor="#fff"
-            app:layout_constraintTop_toBottomOf="@id/logo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:cardBackgroundColor="#fff">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,7 +35,28 @@
                 android:padding="30dp"
                 android:orientation="vertical">
 
-                <!-- Username -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textColor="#003749"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ebebeb"
+                    android:hint="Enter Valid Email"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textStyle="italic"
+                    android:textSize="14sp"
+                    android:padding="8dp"
+                    android:inputType="text"
+                    android:layout_marginTop="5dp" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -46,7 +64,8 @@
                     android:textSize="16sp"
                     android:fontFamily="@font/dunkin_sans"
                     android:textColor="#003749"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
 
                 <EditText
                     android:id="@+id/username"
@@ -59,9 +78,8 @@
                     android:textSize="14sp"
                     android:padding="8dp"
                     android:inputType="text"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp" />
 
-                <!-- Password -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -70,7 +88,7 @@
                     android:textSize="16sp"
                     android:textColor="#003749"
                     android:textStyle="bold"
-                    android:layout_marginTop="12dp"/>
+                    android:layout_marginTop="12dp" />
 
                 <EditText
                     android:id="@+id/password"
@@ -83,9 +101,8 @@
                     android:textSize="14sp"
                     android:padding="8dp"
                     android:inputType="textPassword"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp" />
 
-                <!-- Confirm Password -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -107,9 +124,31 @@
                     android:fontFamily="@font/dunkin_sans"
                     android:textSize="14sp"
                     android:inputType="textPassword"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp" />
 
-                <!-- Buttons -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Display Name"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textColor="#003749"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
+
+                <EditText
+                    android:id="@+id/displayName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ebebeb"
+                    android:hint="Enter Display Name"
+                    android:fontFamily="@font/dunkin_sans"
+                    android:textStyle="italic"
+                    android:textSize="14sp"
+                    android:padding="8dp"
+                    android:inputType="text"
+                    android:layout_marginTop="5dp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -125,11 +164,11 @@
                         android:text="Submit"
                         android:fontFamily="@font/dunkin_sans"
                         android:backgroundTint="#036280"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@android:color/white" />
 
                     <View
                         android:layout_width="20dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent" />
 
                     <Button
                         android:id="@+id/goToLogin"
@@ -139,9 +178,9 @@
                         android:text="to Login"
                         android:fontFamily="@font/dunkin_sans"
                         android:backgroundTint="#036280"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@android:color/white" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

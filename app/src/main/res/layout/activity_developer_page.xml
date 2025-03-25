@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Title -->
         <TextView
             android:text="Meet the Developers"
             android:textSize="24sp"
@@ -22,7 +21,7 @@
             android:layout_marginBottom="16dp"
             android:textColor="#000" />
 
-        <!-- Developer 1 -->
+        <!-- developer 1 -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -51,14 +50,14 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Frontend Developer | Passion for clean UI/UX"
+                    android:text="lorem ipsum"
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Developer 2 -->
+        <!-- developer 2 -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -86,7 +85,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Backend Developer | Lover of algorithms"
+                    android:text="lorem ipsum"
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

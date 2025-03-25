@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -28,8 +29,12 @@ class ProfileActivity : Activity() {
         val editProfileButton: Button = findViewById(R.id.edit_profile_button)
         val btnBackToHome: Button = findViewById(R.id.btnBackToHome)
 
-        val savedName = sharedPreferences.getString(KEY_NAME, "John Doe")
-        val savedEmail = sharedPreferences.getString(KEY_EMAIL, "johndoe@example.com")
+        // Load data from Intent if available, otherwise use SharedPreferences
+        val intentName = intent.getStringExtra("user_name")
+        val intentEmail = intent.getStringExtra("user_email")
+
+        val savedName = intentName ?: sharedPreferences.getString(KEY_NAME, "John Doe")
+        val savedEmail = intentEmail ?: sharedPreferences.getString(KEY_EMAIL, "johndoe@example.com")
 
         userNameEditText.setText(savedName)
         userEmailEditText.setText(savedEmail)
@@ -38,22 +43,28 @@ class ProfileActivity : Activity() {
             val updatedName = userNameEditText.text.toString().trim()
             val updatedEmail = userEmailEditText.text.toString().trim()
 
-            val oldName = sharedPreferences.getString(KEY_NAME, "")
-            if (updatedName != oldName) {
-                val editor = sharedPreferences.edit()
-                editor.putString(KEY_NAME, updatedName)
-                editor.putString(KEY_EMAIL, updatedEmail)
-                editor.apply()
-
-                Toast.makeText(this, "Profile updated successfully!", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "No changes made.", Toast.LENGTH_SHORT).show()
+            if (updatedName.isEmpty() || updatedEmail.isEmpty()) {
+                Toast.makeText(this, "Name and Email cannot be empty.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(updatedEmail).matches()) {
+                Toast.makeText(this, "Invalid email format!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val editor = sharedPreferences.edit()
+            editor.putString(KEY_NAME, updatedName)
+            editor.putString(KEY_EMAIL, updatedEmail)
+            editor.apply()
+
+            Toast.makeText(this, "Profile updated successfully!", Toast.LENGTH_SHORT).show()
         }
 
         btnBackToHome.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

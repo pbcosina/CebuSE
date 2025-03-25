@@ -16,13 +16,13 @@ class SettingsActivity : Activity() {
 
         val backToHomeButton = findViewById<Button>(R.id.backToHomeButton)
         val logoutButton = findViewById<Button>(R.id.logoutButton)
+        val aboutDevelopersButton = findViewById<Button>(R.id.aboutDevelopersButton)
         val notificationSwitch = findViewById<Switch>(R.id.notificationSwitch)
 
         val sharedPreferences = getSharedPreferences("AppSettings", MODE_PRIVATE)
         val isChecked = sharedPreferences.getBoolean("notifications_enabled", false)
         notificationSwitch.isChecked = isChecked
 
-        // handle switch toggle
         notificationSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 Toast.makeText(this, "Notifications Enabled", Toast.LENGTH_SHORT).show()
@@ -32,10 +32,15 @@ class SettingsActivity : Activity() {
                 // yet to add logic to really enable notifs
             }
 
-            // save the switch state
+            // to save the switch state (whether it's on or off)
             val editor = sharedPreferences.edit()
             editor.putBoolean("notifications_enabled", isChecked)
             editor.apply()
+        }
+
+        aboutDevelopersButton.setOnClickListener {
+            val intent = Intent(this, DeveloperPageActivity::class.java)
+            startActivity(intent)
         }
 
         backToHomeButton.setOnClickListener {
