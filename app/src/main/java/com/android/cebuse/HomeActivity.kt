@@ -12,7 +12,7 @@ class HomeActivity : Activity() {
 
         val profileIcon = findViewById<ImageView>(R.id.profileIcon)
         val settingsIcon = findViewById<ImageView>(R.id.settingsIcon)
-        val headToLocation = findViewById<ImageView>(R.id.ic_headToLocation)
+        val headToLocation = findViewById<ImageView>(R.id.location)
 
         profileIcon.setOnClickListener {
             val intent = Intent (this, ProfileActivity::class.java)
@@ -25,7 +25,8 @@ class HomeActivity : Activity() {
         }
 
         headToLocation.setOnClickListener {
-            // ADD ANOTHER LAYOUT THAT SHOULD BE THE PLACES THINGY
+            val intent = Intent(this, LocationActivity::class.java)
+            startActivity(intent)
         }
     }
 }
