@@ -74,7 +74,7 @@ class LoginActivity : Activity() {
                 startActivity(intent)
                 finish()
             } else {
-                Toast.makeText(this, "Invalid credentials!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "You need to register first!", Toast.LENGTH_SHORT).show()
             }
         }
 

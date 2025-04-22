@@ -10,6 +10,7 @@ android {
     defaultConfig {
         applicationId = "com.android.cebuse"
         minSdk = 24
+        //noinspection OldTargetApi
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -70,4 +71,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
 }
