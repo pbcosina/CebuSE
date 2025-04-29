@@ -21,7 +21,7 @@
             android:layout_marginBottom="16dp"
             android:textColor="#000" />
 
-        <!-- developer 1 -->
+        <!-- Developer 1 -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -54,15 +54,23 @@
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Birthday: May 1, 2005"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#888" />
             </LinearLayout>
         </LinearLayout>
 
-        <!-- developer 2 -->
+        <!-- Developer 2 -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
 
             <ImageView
                 android:src="@drawable/developer2"
@@ -90,17 +98,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
+                <TextView
+                    android:text="Birthday: July 17, 2005"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#888" />
             </LinearLayout>
-
-
         </LinearLayout>
 
+        <!-- Back Button -->
         <Button
             android:id="@+id/button_back_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="16dp"
             android:text="Back to Home" />
-
     </LinearLayout>
+
 </ScrollView>

@@ -13,6 +13,7 @@ class HomeActivity : Activity() {
         val profileIcon = findViewById<ImageView>(R.id.profileIcon)
         val settingsIcon = findViewById<ImageView>(R.id.settingsIcon)
         val headToLocation = findViewById<ImageView>(R.id.location)
+        val headToCuisine = findViewById<ImageView>(R.id.cuisinesIcon)
 
         profileIcon.setOnClickListener {
             val intent = Intent (this, ProfileActivity::class.java)
@@ -26,6 +27,11 @@ class HomeActivity : Activity() {
 
         headToLocation.setOnClickListener {
             val intent = Intent(this, LocationActivity::class.java)
+            startActivity(intent)
+        }
+
+        headToCuisine.setOnClickListener {
+            val intent = Intent(this, CuisineActivity::class.java)
             startActivity(intent)
         }
     }
