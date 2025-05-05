@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Patterns
+import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
 
@@ -15,6 +16,7 @@ class ProfileActivity : Activity() {
 
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var profileLayout: LinearLayout
+    private lateinit var profileBanner: View
     private lateinit var profilePicture: ImageView
     private lateinit var userNameEditText: EditText
     private lateinit var userEmailEditText: EditText
@@ -24,7 +26,7 @@ class ProfileActivity : Activity() {
     private val KEY_NAME = "user_name"
     private val KEY_EMAIL = "user_email"
     private val KEY_BIO = "user_bio"
-    private val KEY_BG_COLOR = "bg_color"
+    private val KEY_BANNER_COLOR = "banner_color"
     private val KEY_PROFILE_URI = "profile_uri"
 
     private val PICK_IMAGE_REQUEST = 1
@@ -36,6 +38,7 @@ class ProfileActivity : Activity() {
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
 
         profileLayout = findViewById(R.id.profile_layout)
+        profileBanner = findViewById(R.id.profile_banner)
         profilePicture = findViewById(R.id.profile_picture)
         userNameEditText = findViewById(R.id.edit_user_name)
         userEmailEditText = findViewById(R.id.edit_user_email)
@@ -55,8 +58,8 @@ class ProfileActivity : Activity() {
         userEmailEditText.setText(sharedPreferences.getString(KEY_EMAIL, "johndoe@example.com"))
         userBioEditText.setText(sharedPreferences.getString(KEY_BIO, ""))
 
-        val savedColor = sharedPreferences.getString(KEY_BG_COLOR, "#FFFFFF")
-        profileLayout.setBackgroundColor(Color.parseColor(savedColor))
+        val savedBannerColor = sharedPreferences.getString(KEY_BANNER_COLOR, "#CCCCCC")
+        profileBanner.setBackgroundColor(Color.parseColor(savedBannerColor))
 
         val savedUri = sharedPreferences.getString(KEY_PROFILE_URI, null)
         if (savedUri != null) {
@@ -89,8 +92,8 @@ class ProfileActivity : Activity() {
 
         colorButtons.forEach { (buttonId, colorCode) ->
             findViewById<Button>(buttonId).setOnClickListener {
-                profileLayout.setBackgroundColor(Color.parseColor(colorCode))
-                sharedPreferences.edit().putString(KEY_BG_COLOR, colorCode).apply()
+                profileBanner.setBackgroundColor(Color.parseColor(colorCode))
+                sharedPreferences.edit().putString(KEY_BANNER_COLOR, colorCode).apply()
             }
         }
 
